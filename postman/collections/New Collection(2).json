@@ -33,7 +33,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://api.github.com?hello=",
+							"raw": "https://api.github.com?hello=wassup",
 							"protocol": "https",
 							"host": [
 								"api",
@@ -43,7 +43,7 @@
 							"query": [
 								{
 									"key": "hello",
-									"value": ""
+									"value": "wassup"
 								}
 							]
 						}
