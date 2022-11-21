@@ -33,7 +33,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://api.github.com?hello=key",
+							"raw": "https://api.github.com?hello=",
 							"protocol": "https",
 							"host": [
 								"api",
@@ -43,8 +43,7 @@
 							"query": [
 								{
 									"key": "hello",
-									"value": "key",
-									"type": "text"
+									"value": ""
 								}
 							]
 						}
