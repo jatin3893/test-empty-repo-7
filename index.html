@@ -1,0 +1,160 @@
+
+<html>
+
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body class="ms-3 mt-2">
+  <h2>Import API</h2>
+  Do not allow user to configure import settings
+  <br>
+  <div class="postman-run-button" data-postman-api-schema-url="https://petstore.swagger.io/v2/swagger.json"
+    data-postman-action="api/import"></div>
+
+  <br><br>
+  Allow user to configure import settings
+  <br>
+  <div class="postman-run-button" data-postman-api-schema-url="https://petstore.swagger.io/v2/swagger.json"
+    data-postman-action="api/import" data-postman-allow-configuration></div>
+
+
+    <br><br>
+  Manually configure importing schema URL
+  <br>
+  <div id="manual-schema-url">
+  <div class="postman-run-button" data-postman-api-schema-url="https://petstore.swagger.io/v2/swagger.json"
+    data-postman-action="api/import" data-postman-allow-configuration></div>
+  </div>
+  <br><br>
+  Dynamic schema URL and allowing user to configure import settings (For illustration purpose only, it will not work to import an API as schema URL will be invalid)
+  <br>
+  <div id="dynamic-schema-url">
+    <div class="postman-run-button" data-postman-api-schema-url="https://petstore.swagger.io/v2/swagger.json"
+    data-postman-action="api/import" data-postman-allow-configuration></div>
+  </div>
+
+  <br><br><br>
+  <h2>Import Collection</h2>
+  <div class="postman-run-button" data-postman-action="collection/import" data-postman-var-1="c28866a4160722e6b550">
+  </div>
+  <br /><br /><br />
+  <section class="sample-script">
+    <h2>Sample Script</h2>
+    <pre>
+      <code class="language-javascript">
+        &lt;div
+          class="postman-run-button"
+          data-postman-action="api/import"
+          data-postman-allow-configuration // If this attribute is present, user will be able to configure the import settings on Postman
+          &gt;
+        &lt;/div&gt;
+
+        &lt;script type="text/javascript"&gt;
+          (function (p,o,s,t,m,a,n) {
+            !p[s] && (p[s] = function () { (p[t] || (p[t] = [])).push(arguments); });
+            !o.getElementById(s+t) && o.getElementsByTagName("head")[0].appendChild((
+              (n = o.createElement("script")),
+              (n.id = s+t), (n.async = 1), (n.src = m), n
+            ));
+          }(window, document, "_pm", "PostmanRunObject", "https://run-beta.pstmn.io/button.js"));
+
+
+          &lt;/script&gt;
+      </code>
+    </pre>
+
+    <h2>Sample Script for dynamic URL</h2>
+    <pre>
+      <code class="language-javascript">
+        &lt;div id="dynamic-schema-url"&gt;
+          &lt;div
+            class="postman-run-button"
+            data-postman-api-schema-url="https://petstore.swagger.io/v2/swagger.json"
+            data-postman-action="api/import"
+            data-postman-allow-configuration // If this attribute is present, user will be able to configure the import settings on Postman
+            &gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;script type="text/javascript"&gt;
+          (function (p,o,s,t,m,a,n) {
+            !p[s] && (p[s] = function () { (p[t] || (p[t] = [])).push(arguments); });
+            !o.getElementById(s+t) && o.getElementsByTagName("head")[0].appendChild((
+              (n = o.createElement("script")),
+              (n.id = s+t), (n.async = 1), (n.src = m), n
+            ));
+          }(window, document, "_pm", "PostmanRunObject", "https://run-beta.pstmn.io/button.js"));
+
+
+          // Return a sample url of the format: test.com/{hour}-{minute}-{seconds}
+          function getAPISchemaURL() {
+
+            const date = new Date();
+            return `test.com/${date.toLocaleTimeString().replace(/:/g, "-")}`
+          }
+
+          // Function to update the schema URL
+          function updateSchemaUrl(event) {
+            var runButton = event.target || event.srcElement;
+
+            runButton.setAttribute('data-postman-api-schema-url', getAPISchemaURL())
+          }
+
+          // Add on-click event for container
+          var container = document.getElementById("dynamic-schema-url");
+
+          // Here the last boolean argument is needed as true to first fire the event of container element which updates child element attribute.
+          container.addEventListener("click", updateSchemaUrl, true)
+        &lt;/script&gt;
+      </code>
+    </pre>
+  </section>
+
+  <script type="text/javascript">
+    (function (p, o, s, t, m, a, n) {
+      !p[s] && (p[s] = function () { (p[t] || (p[t] = [])).push(arguments); });
+      !o.getElementById(s + t) && o.getElementsByTagName("head")[0].appendChild((
+        (n = o.createElement("script")),
+        (n.id = s + t), (n.async = 1), (n.src = m), n
+      ));
+    }(window, document, "_pm", "PostmanRunObject", "https://run-beta.pstmn.io/button.js"));
+
+    // Configure dynamic url
+
+    // Return a sample url of the format: test.com/<hour>-<minute>-<seconds>
+    function getAPISchemaURL() {
+
+      const date = new Date();
+      return `test.com/${date.toLocaleTimeString().replace(/:/g, "-")}`
+    }
+
+    // Function to update the schema URL
+    function updateSchemaUrl(event) {
+      var runButton = event.target || event.srcElement;
+
+      runButton.setAttribute('data-postman-api-schema-url', getAPISchemaURL())
+    }
+
+    // Function to ask schema url from user
+    function askAndUpdateSchemaUrl(event) {
+      var runButton = event.target || event.srcElement,
+        schemaUrl = prompt("Please enter the schema URL, defaults to Petstore api", "https://petstore.swagger.io/v2/swagger.json");
+        runButton.setAttribute('data-postman-api-schema-url', schemaUrl);
+    }
+
+    // Add on-click event for container
+    var container = document.getElementById("dynamic-schema-url");
+    container.addEventListener("click", updateSchemaUrl, true)
+
+    var manualButton = document.getElementById("manual-schema-url");
+    manualButton.addEventListener("click", askAndUpdateSchemaUrl, true)
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
