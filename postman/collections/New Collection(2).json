@@ -1,14 +1,14 @@
 {
 	"info": {
-		"_postman_id": "53c25873-11b3-4f44-a14c-9425cfa950e2",
+		"_postman_id": "007faec8-1d8e-47f7-837d-784289c147ce",
 		"name": "New Collection",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_uid": "869033-53c25873-11b3-4f44-a14c-9425cfa950e2"
+		"_uid": "1138048-007faec8-1d8e-47f7-837d-784289c147ce"
 	},
 	"item": [
 		{
 			"name": "https://api.github.com",
-			"id": "ceb80136-eb01-4e54-8ac5-38c892674e21",
+			"id": "1e577611-2f9f-4567-8480-6464546cb8eb",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -27,7 +27,7 @@
 			},
 			"response": [
 				{
-					"id": "16d122c8-aaca-40c4-9b86-06ca6b29d166",
+					"id": "67471f5e-6532-4cd9-9039-2a04d1e334cd",
 					"name": "https://api.github.com",
 					"originalRequest": {
 						"method": "GET",
@@ -51,6 +51,7 @@
 					"status": "OK",
 					"code": 200,
 					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "html",
 					"header": [
 						{
 							"key": "Server",
