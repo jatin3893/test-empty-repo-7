@@ -9,7 +9,6 @@ id = 962f92c8-bf29-44ce-95f9-3fd3bcc029bc
 
 [config.relations.collections]
 rootDirectory = jatin/collections
-files[] = {"id":"5755077-aaf7b3a1-8a91-4370-bdf6-874cfd449a03","path":"Generated Collection.json","metaData":{"generateCollectionPreferences":"{\"requestNameSource\":\"Fallback\",\"indentCharacter\":\"Space\",\"parametersResolution\":\"Example\",\"folderStrategy\":\"Tags\",\"includeAuthInfoInExample\":true,\"enableOptionalParameters\":true,\"keepImplicitHeaders\":false,\"includeDeprecated\":true,\"alwaysInheritAuthentication\":false,\"updateCollectionSync\":true,\"requestParametersResolution\":\"Example\",\"exampleParametersResolution\":\"Example\"}"}}
 
 [config.relations.collections.metaData]
 
